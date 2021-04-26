@@ -1,0 +1,107 @@
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay2">
+    <h3>Exam</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!--================Blog Area =================-->
+<section class="blog_area single-post-area section-padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 posts-list">
+
+            <div class="card text-center">
+                <div class="card-header">
+                  <span class="text-uppercase font-weight-bold text-primary">Bài kiểm tra</span>
+                  <span class="float-right">{{timer | date:'mm:ss'}}</span>
+                </div>
+                <div class="card-body" *ngFor="let s of tests|slice:start:start+1">
+                  <h5 class="card-title text-left">{{start+1}}. {{s.Text}} </h5>
+                  <div class="card-text">
+                     <div class="form-check text-left" *ngFor="let a of s.Answers">
+                        <input class="form-check-input" type="radio" [(ngModel)]="answer" name="answer" id="answer" value={{a.Id}}>
+                        {{a.Text}}
+                      </div>
+                  </div>
+                </div>
+                <div class="card-footer text-muted">
+                  ĐIỂM {{point}}
+                  <div class="row">
+                     <div class="col-12">
+                        <button type="button" class="btn btn-danger float-left">Thoát</button>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <button type="button" class="btn btn-secondary" (click)="prev()" > Câu trước </button>
+                          <button type="button" class="btn btn-secondary" (click)="next()" > Câu tiếp </button>
+                        </div>
+                        <button type="button" class="btn btn-success float-right" (click)="countPoint()">Hoàn thành</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-lg-4">
+             <div class="blog_right_sidebar">
+                <aside class="single_sidebar_widget search_widget">
+                   <form action="#">
+                      <div class="form-group">
+                         <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder='Search Keyword'
+                               onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                            <div class="input-group-append">
+                               <button class="btn" type="button"><i class="ti-search"></i></button>
+                            </div>
+                         </div>
+                      </div>
+                      <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                         type="submit">Search</button>
+                   </form>
+                </aside>
+                <!-- <aside class="single_sidebar_widget post_category_widget">
+                   <h4 class="widget_title">Category</h4>
+                   <ul class="list cat-list">
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Resaurant food</p>
+                            <p>(37)</p>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Travel news</p>
+                            <p>(10)</p>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Modern technology</p>
+                            <p>(03)</p>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Product</p>
+                            <p>(11)</p>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Inspiration</p>
+                            <p>(21)</p>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="#" class="d-flex">
+                            <p>Health Care</p>
+                            <p>(21)</p>
+                         </a>
+                      </li>
+                   </ul>
+                </aside> -->
+                
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!--================ Blog Area end =================-->

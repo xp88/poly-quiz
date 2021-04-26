@@ -1,0 +1,53 @@
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay2">
+    <h3>Các môn học</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<!-- popular_courses_start -->
+<div class="popular_courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-100">
+                    <h3>Tất cả các môn học</h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="all_courses">
+        <div class="container">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-6" *ngFor='let s of subjects | slice: start : start + pageSize'>
+                                    <div class="single_courses">
+                                        <div class="thumb">
+                                            <a href="/exam">
+                                                <img src="assets/images/logos/{{s.Logo}}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="courses_info">
+                                            <span>{{s.Name}}</span>
+                                            <h3><a href="/exam/{{s.Id}}">{{s.Name}}</a></h3>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="btn-group mx-auto" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-success" (click)="first()" > <i class="fa fa-angle-double-left"></i> Đầu</button>
+                                    <button type="button" class="btn btn-secondary" (click)="prev()" > <i class="fa fa-angle-left"></i> Trước</button>
+                                    <button type="button" class="btn btn-secondary" (click)="next()" >Tiếp <i class="fa fa-angle-right"></i></button>
+                                    <button type="button" class="btn btn-success" (click)="last()" >Cuối <i class="fa fa-angle-double-right"></i></button>
+                                  </div>
+                            </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_courses_end-->

@@ -1,0 +1,40 @@
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay2">
+    <h3>Tạo tài khoản mới</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<div class="col-4 mx-auto">
+    <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+        <div class="form-group">
+          <label>Tên đăng nhập</label>
+          <input type="text" class="form-control" ngModel id="username" name="username" #username="ngModel" required minlength="3">
+          <small class="text-danger" *ngIf="!username?.valid && (username?.dirty||username?.touched)">
+            Tên đăng nhập có ít nhất 3 ký tự
+        </small>
+        </div>
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" class="form-control" ngModel id="password" name="password" #password="ngModel" required minlength="5">
+          <small class="text-danger" *ngIf="!password?.valid && (password?.dirty||password?.touched)">
+            Mật khẩu bắt buộc có ít nhất 5 ký tự
+        </small>
+        </div>
+        <div class="form-group">
+            <label for="fullname">Họ và tên</label>
+            <input type="text" class="form-control" ngModel id="fullname" name="fullname" #fullname="ngModel" required minlength="5">
+            <small class="text-danger" *ngIf="!fullname?.valid && (fullname?.dirty||fullname?.touched)">
+              Họ và tên bắt buộc có ít nhất 5 ký tự
+          </small>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" ngModel id="email" name="email" #email="ngModel" required email>
+            <small class="text-danger" *ngIf="!email?.valid && (email?.dirty||email?.touched)">
+              Sai định dạng email
+          </small>
+          </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid" >Tạo tài khoản</button>
+      </form>
+</div>
+

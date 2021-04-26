@@ -1,0 +1,33 @@
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay2">
+    <h3>Tài khoản cá nhân</h3>
+</div>
+<!-- bradcam_area_end -->
+
+<div class="col-4 mx-auto">
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="form-group">
+          <label>Tên đăng nhập</label>
+          <input type="text" class="form-control" ngModel id="username" name="username" #username="ngModel" required minlength="3">
+          <small class="text-danger" *ngIf="!username?.valid && (username?.dirty||username?.touched)">
+            Tên đăng nhập có ít nhất 3 ký tự
+        </small>
+        </div>
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" class="form-control" ngModel id="password" name="password" #password="ngModel" required minlength="5">
+          <small class="text-danger" *ngIf="!password?.valid && (password?.dirty||password?.touched)">
+            Mật khẩu bắt buộc có ít nhất 4 ký tự
+        </small>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Lưu mật khẩu</label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid" >Đăng nhập</button>
+      </form>
+      <a href="/forgot">Quên mật khẩu?</a>
+      <br>
+      <a href="/register"> Tạo tài khoản mới </a>
+</div>
+
